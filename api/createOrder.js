@@ -1,6 +1,7 @@
 const Razorpay = require("razorpay");
 
 module.exports = async (req, res) => {
+  console.log("RAZORPAY KEY:", process.env.RAZORPAY_KEY_ID);
 
 res.setHeader("Access-Control-Allow-Origin", "*");
 res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
