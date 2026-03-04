@@ -18,12 +18,25 @@ key_id: process.env.RAZORPAY_KEY_ID,
 key_secret: process.env.RAZORPAY_KEY_SECRET
 });
 
-const { advance } = req.body;
+const { advance, car, rent, delivery, returnDate, deposit, balance } = req.body;
 
 const order = await razorpay.orders.create({
 amount: advance * 100,
 currency: "INR",
-receipt: "booking_receipt"
+receipt: "booking_receipt",
+notes: {
+details: `*car:* ${car}
+
+*delivery:* ${delivery}
+
+*return:* ${returnDate}
+
+*rent:* ${rent}
+
+*deposit:* ${deposit}
+
+*balance:* ${balance}`
+}
 });
   
 return res.status(200).json({
