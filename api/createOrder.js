@@ -1,7 +1,6 @@
 const Razorpay = require("razorpay");
 
 module.exports = async (req, res) => {
-  console.log("RAZORPAY KEY:", process.env.RAZORPAY_KEY_ID);
 
 res.setHeader("Access-Control-Allow-Origin", "*");
 res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -33,7 +32,7 @@ deposit: deposit,
 balance: balance
 }
 });
-  
+
 return res.status(200).json({
 order_id: order.id,
 amount: order.amount,
