@@ -23,13 +23,15 @@ const order = await razorpay.orders.create({
 amount: advance * 100,
 currency: "INR",
 receipt: "booking_receipt",
-notes: {
-car: car,
-delivery: delivery,
-return: returnDate,
-rent: rent,
-deposit: deposit,
-balance: balance
+
+  notes: {
+booking:
+`car: ${car}
+delivery: ${delivery}
+return: ${returnDate}
+rent: ${rent}
+deposit: ${deposit}
+balance: ${balance}`
 }
 });
 
