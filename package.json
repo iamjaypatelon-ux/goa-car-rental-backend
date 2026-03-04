@@ -1,0 +1,6 @@
+{
+ "name": "goa-car-rental-backend",
+ "dependencies": {
+   "razorpay": "^2.9.2"
+ }
+}
