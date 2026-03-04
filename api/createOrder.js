@@ -24,14 +24,13 @@ amount: advance * 100,
 currency: "INR",
 receipt: "booking_receipt",
 
-  notes: {
-booking:
-`car: ${car}
-delivery: ${delivery}
-return: ${returnDate}
-rent: ${rent}
-deposit: ${deposit}
-balance: ${balance}`
+notes: {
+car: car,
+delivery: delivery,
+return: returnDate,
+rent: rent,
+deposit: deposit,
+balance: balance
 }
 });
 
