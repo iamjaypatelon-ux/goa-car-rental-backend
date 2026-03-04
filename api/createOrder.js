@@ -1,6 +1,8 @@
-import Razorpay from "razorpay";
+const Razorpay = require("razorpay");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
+
+try {
 
 const razorpay = new Razorpay({
 key_id: process.env.RAZORPAY_KEY_ID,
@@ -19,4 +21,12 @@ amount: order.amount,
 key: process.env.RAZORPAY_KEY_ID
 });
 
+} catch (error) {
+
+res.status(500).json({
+error: error.message
+});
+
 }
+
+};
